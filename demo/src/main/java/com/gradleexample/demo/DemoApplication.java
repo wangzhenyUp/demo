@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-@MapperScan("com.gradleexample.demo")
+@MapperScan("com.gradleexample.demo.mapper")
 public class DemoApplication {
 
     public static void main(String[] args) {

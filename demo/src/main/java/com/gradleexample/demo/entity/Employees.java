@@ -57,4 +57,14 @@ public class Employees {
     public void setWokeno(String wokeno) {
         this.workno = wokeno;
     }
+
+    @Override
+    public String toString() {
+        return "Employees{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", workno='" + workno + '\'' +
+                '}';
+    }
 }
