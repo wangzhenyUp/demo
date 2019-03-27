@@ -10,11 +10,8 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CommodityServiceImplTest{
-    private CommodityServiceImpl commodityService = new CommodityServiceImpl();
+
     private static List<Commodity> commodityList = new ArrayList();
-
-
-
     @BeforeClass
     public static void  setUp(){
         Commodity commodity1 = new Commodity(1,"商品1","cd001001",6.6);
@@ -26,26 +23,22 @@ public class CommodityServiceImplTest{
     //@Test(expected = IndexOutOfBoundsException.class)期望测试方法可以抛出IndexOutOfBoundsException
 
     //设置时间限制
-    @Test(timeout = 50)
+    @Test(timeout = 1000)
     public void getAllCommodityInfo(){
 
-        List<Commodity> commoditytest = commodityService.getALLCommodityInfo(commodityList);
         Commodity commodity = new Commodity(1,"商品1","cd001001",6.6);
-        //断言为true,assertFalse()相反
-        Commodity commodity1 = commoditytest.get(0);
-        Assert.assertEquals(1, commodity1.getId());
+        Commodity commodity1 = commodityList.get(0);
 
         //断言相等,assertNotEquals()相反
         Assert.assertEquals(commodity, commodity1);
 
         //断言不为空,assertNull()相反
-        Assert.assertNotNull(commoditytest);
+        Assert.assertNotNull(commodityList);
 
         //断言对象不同,assertSame()相反.这里相当与==
         Assert.assertNotSame(commodity, commodity1);
 
         //使用assertj进行断言,commoditytest是否包含commodity
-        assertThat(commoditytest).contains(commodity);
+        assertThat(commodityList).contains(commodity);
     }
-
 }
